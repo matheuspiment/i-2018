@@ -11,12 +11,12 @@ public class Exercicio3 {
 	    try {
 	    	FileInputStream file = new FileInputStream(args[0]);
 	    	InputStreamReader inputReader = new InputStreamReader(file, "UTF-8");
-				BufferedReader bufferReader = new BufferedReader(inputReader);
+		BufferedReader bufferReader = new BufferedReader(inputReader);
 
-				String linha;
-				while ((linha = bufferReader.readLine()) != null) {
-					System.out.println(linha);
-				}
+		String linha;
+		while ((linha = bufferReader.readLine()) != null) {
+			System.out.println(linha);
+		}
 
 	    	bufferReader.close();
 
