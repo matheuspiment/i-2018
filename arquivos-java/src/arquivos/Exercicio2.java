@@ -1,33 +1,34 @@
 package arquivos;
 
-import java.io.DataInputStream;
-import java.io.FileInputStream;
+import java.io.RandomAccessFile;
+import java.io.File;
 import java.io.IOException;
-import java.util.Scanner;
 
 public class Exercicio2	 {
 
 	public static void main(String[] args) {
-		Scanner reader = new Scanner(System.in);
-
-	    System.out.printf("Informe o nome de arquivo texto:\n");
-	    String filename = reader.nextLine();
-	    reader.close();
-
 	    try {
-	    	FileInputStream file = new FileInputStream(filename);
-	    	DataInputStream dataInput = new DataInputStream(file);
+			File file = new File(args[0]);
+			RandomAccessFile randomAccess = new RandomAccessFile(file, "r");
+			byte[] byteArray = new byte[4];
 
-				int tamanho = file.available();
-				byte[] buffer = new byte[tamanho];
-				dataInput.read(buffer);
-	    	dataInput.close();
+			randomAccess.seek(0);
+			randomAccess.read(byteArray, 0, 2);
 
-				if (buffer[1] == -40 && buffer[tamanho - 1] == -39) {
-					System.out.println("É uma imagem jpg/jpeg");
-				} else {
-					System.out.println("Não é uma imagem jpg/jpeg");
-				}
+			randomAccess.seek(randomAccess.length() - 2);
+			randomAccess.read(byteArray, 2, 2);
+
+			String firstPair = Integer.toHexString(byteArray[0] & 0xFF) +
+				Integer.toHexString(byteArray[1] & 0xFF);
+
+			String lastPair = Integer.toHexString(byteArray[2] & 0xFF) +
+				Integer.toHexString(byteArray[3] & 0xFF);
+
+			if (firstPair.equals("ffd8") && lastPair.equals("ffd9")) {
+				System.out.println("É uma imagem jpg/jpeg");
+			} else {
+				System.out.println("Não é uma imagem jpg/jpeg");
+			}
 
 	    } catch (IOException e) {
 	        System.err.printf("Erro na abertura do arquivo: %s.\n",
