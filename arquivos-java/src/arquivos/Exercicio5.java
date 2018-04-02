@@ -13,12 +13,6 @@ public class Exercicio5 {
 	public static void main(String[] args) {
 	    try {
 	    	FileInputStream file = new FileInputStream(args[0]);
-
-			// DataInputStream dis = new DataInputStream(file);
-			// int valor = dis.readInt();
-			// dis.close();
-			// System.out.println(valor);
-
 	    	InputStreamReader inputReader = new InputStreamReader(file, "UTF-8");
 			BufferedReader bufferReader = new BufferedReader(inputReader);
 
@@ -30,10 +24,8 @@ public class Exercicio5 {
 
 				byte[] linhaToByte = linha.getBytes("UTF-8");
 				int byteAmount = linhaToByte.length;
-				System.out.println(linha);
-				System.out.println(byteAmount);
 				dataOutput.writeInt(byteAmount);
-				dataOutput.writeBytes(linha);
+				dataOutput.write(linhaToByte, 0, byteAmount);
 
 			}
 

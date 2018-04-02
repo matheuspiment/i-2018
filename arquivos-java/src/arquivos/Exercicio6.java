@@ -18,12 +18,15 @@ public class Exercicio6 {
 
 			byte[] intByte = new byte[4];
 			int lineByteAmount;
+
 			while ((lineByteAmount = dis.read(intByte)) != -1) {
+
 				lineByteAmount = ByteBuffer.wrap(intByte).getInt();
 				byte[] byteArray = new byte[lineByteAmount];
 				dis.read(byteArray);
 				String str = new String(byteArray, "UTF-8");
 				System.out.println(str);
+				
 			}
 
 			dis.close();
