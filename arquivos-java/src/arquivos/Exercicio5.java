@@ -30,9 +30,10 @@ public class Exercicio5 {
 
 				byte[] linhaToByte = linha.getBytes("UTF-8");
 				int byteAmount = linhaToByte.length;
-
+				System.out.println(linha);
+				System.out.println(byteAmount);
 				dataOutput.writeInt(byteAmount);
-				dataOutput.write(linhaToByte, 0, byteAmount);
+				dataOutput.writeBytes(linha);
 
 			}
 
