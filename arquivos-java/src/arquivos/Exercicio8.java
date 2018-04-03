@@ -16,18 +16,12 @@ public class Exercicio8 {
 			byte[] intByte = new byte[4];
 			int lineIndex;
 			int lineByteAmount;
-			int offset = 0;
+			int byteAmountToSkip = 0;
 
-			do {
-				dis.skipBytes(offset);
-				lineIndex = dis.read(intByte);
+			while ((lineIndex = dis.read(intByte)) != -1) {
 				lineIndex = ByteBuffer.wrap(intByte).getInt();
-				// System.out.println(lineIndex);
-				if (lineIndex > lineIndexToRead) {
-					System.out.println("Indice inválido");
-				}
 
-				if (lineIndex != -1 && lineIndex == lineIndexToRead) {
+				if (lineIndex == lineIndexToRead) {
 					lineByteAmount = dis.read(intByte);
 					lineByteAmount = ByteBuffer.wrap(intByte).getInt();
 
@@ -36,13 +30,13 @@ public class Exercicio8 {
 
 					String str = new String(byteArray, "UTF-8");
 					System.out.println(str);
-
 				} else {
-					offset = dis.read(intByte);
-					offset = ByteBuffer.wrap(intByte).getInt();
+					byteAmountToSkip = dis.read(intByte);
+					byteAmountToSkip = ByteBuffer.wrap(intByte).getInt();
+					dis.skipBytes(byteAmountToSkip);
 				}
-
-			} while (lineIndex != -1 && lineIndex < lineIndexToRead);
+			
+			}
 
 			dis.close();
 
