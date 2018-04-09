@@ -1,9 +1,21 @@
+/*
+ * Copyright (c) 2018.
+ * Matheus Ribeiro Pimenta Nunes
+ * Creative Commons Attribution 4.0 International License.
+ */
+
 package br.ufg.inf.es.integracao.serializacao;
 
 /**
- * Created by aluno on 09/04/18.
+ * Programa para exercitar a serialização e desserialização de instâncias da classe Student.
  */
 public class Exercicio2 {
+
+    /**
+     * Ponto de entrada da aplicação.
+     *
+     * @param args Ignorados.
+     */
     public static void main(String[] args) {
         Student student = new Student("Matheus");
         byte[] byteArray;

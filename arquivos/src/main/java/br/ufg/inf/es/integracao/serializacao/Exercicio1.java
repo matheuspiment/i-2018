@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2018.
+ * Matheus Ribeiro Pimenta Nunes
+ * Creative Commons Attribution 4.0 International License.
+ */
+
 package br.ufg.inf.es.integracao.serializacao;
 
 import java.io.ByteArrayOutputStream;
@@ -6,20 +12,15 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 /**
- * Created by aluno on 09/04/18.
+ * Programa que provoca a geração da exceção NotSerializableException quando se tenta serializar um objeto.
  */
 public class Exercicio1 {
 
-    private static int TamanhoEmBytes(Serializable s) throws IOException {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        ObjectOutputStream oos = new ObjectOutputStream(baos);
-
-        oos.writeObject(s);
-        oos.close();
-
-        return baos.toByteArray().length;
-    }
-
+    /**
+     * Ponto de entrada da aplicação.
+     *
+     * @param args Ignorados.
+     */
     public static void main(String[] args) {
         Pet pet = new Pet("Totó");
         Pet[] pets = { pet };
@@ -31,6 +32,16 @@ public class Exercicio1 {
         } catch (Exception e) {
             System.out.println(e);
         }
+    }
+
+    private static int TamanhoEmBytes(Serializable s) throws IOException {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ObjectOutputStream oos = new ObjectOutputStream(baos);
+
+        oos.writeObject(s);
+        oos.close();
+
+        return baos.toByteArray().length;
     }
 
 }
