@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018.
+ * Copyright (c) 2016.
  * Matheus Ribeiro Pimenta Nunes
  * Creative Commons Attribution 4.0 International License.
  */

@@ -1,6 +1,5 @@
 package br.ufg.inf.es.integracao.serializacao;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -26,6 +25,20 @@ public class Student implements Serializable {
         this.name = name;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Student)) {
+            return false;
+        }
+
+        Student student = (Student) o;
+        if (!name.equals(student.name)) {
+            return false;
+        }
+
+        return true;
+    }
+
     public static byte[] serialize(Student student) throws IOException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ObjectOutputStream oos = new ObjectOutputStream(baos);
@@ -38,20 +51,14 @@ public class Student implements Serializable {
         return byteArray;
     }
 
-    public static Student deserialize(byte[] byteArray) throws IOException {
+    public static Student deserialize(byte[] byteArray) throws IOException, ClassNotFoundException {
         ByteArrayInputStream bais = new ByteArrayInputStream(byteArray);
         ObjectInputStream ois = new ObjectInputStream(bais);
 
         Student student = null;
+        student = (Student) ois.readObject();
 
-        try {
-            student = (Student) ois.readObject();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } finally {
-            ois.close();
-        }
-
+        ois.close();
         return student;
     }
 }

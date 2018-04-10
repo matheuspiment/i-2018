@@ -1,7 +1,5 @@
 package br.ufg.inf.es.integracao.serializacao;
 
-import java.io.ByteArrayOutputStream;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 /**
