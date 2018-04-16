@@ -1,12 +1,12 @@
 ### JSON (exercícios)
 
-1  true, false, numbers.  
+1 - true, false, numbers.  
 
-2  application/json.  
+2 - application/json.  
 
-3  O valor nil não é um valor literal admitido pelo JSON.
+3 - O valor nil não é um valor literal admitido pelo JSON.
 
-4  { "startCadence": 10, "startSpeed": 15, "startGear": 20 } 
+4 - { "startCadence": 10, "startSpeed": 15, "startGear": 20 } 
  
 5   
   a. { "cidades": ["Goiânia", "Trindade"] }  
@@ -14,4 +14,6 @@
   c. { "altura": 2.3 }  
   d. { "sabor": null }  
 
-6 ![exercicio 6](docs/img/exercicio6.png)
+6 - ![exercicio 6](docs/img/exercicio6.png)
+
+7 - [Exercicio7](arquivos/src/main/br/ufg/inf/es/integracao/apigithub)
