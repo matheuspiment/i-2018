@@ -16,4 +16,4 @@
 
 6 - ![exercicio 6](docs/img/exercicio6.png)
 
-7 - [Exercicio7](arquivos/src/main/br/ufg/inf/es/integracao/apigithub)
+7 - [Exercicio7](arquivos/src/main/java/br/ufg/inf/es/integracao/apigithub/Exercicio7.java)
