@@ -29,24 +29,18 @@ public class Exercicio7 {
       connection.setReadTimeout(15*1000);
       connection.connect();
 
-      reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-      StringBuilder stringBuilder = new StringBuilder();
+      reader = getConnectionBuferredReader(connection);
 
-      String line = null;
-      while ((line = reader.readLine()) != null) {
-        stringBuilder.append(line + "\n");
-      }
+      String result = stringfy(reader);
 
-      String result = stringBuilder.toString();
+      JsonObject gitUserJSON = getAsJsonObject(result);
 
-      JsonParser parser = new JsonParser();
-      JsonObject gitUserJSON = parser.parse(result).getAsJsonObject();
-      String avatarURL = gitUserJSON.get("avatar_url").toString().replaceAll("\"", "");
-      String userName = gitUserJSON.get("login").toString().replaceAll("\"", "");
+      String avatarURL = getValueByKey(gitUserJSON, "avatar_url");
+      String userName = getValueByKey(gitUserJSON, "login");
 
       System.out.println("URL do avatar " + avatarURL);
 
-      InputStream in = new URL(avatarURL).openStream();
+      InputStream in = getAvatarInputStream(avatarURL);
       Files.copy(in, Paths.get(userName+ ".jpg"));
 
       System.out.println("Imagem salva no diretório arquivos com o nome " + userName + ".jpg");
@@ -57,4 +51,32 @@ public class Exercicio7 {
       reader.close();
     }
   }
+
+  public static BufferedReader getConnectionBuferredReader(HttpURLConnection connection) throws IOException {
+      return new BufferedReader(new InputStreamReader(connection.getInputStream()));
+  }
+
+  public static String stringfy(BufferedReader reader) throws IOException {
+    StringBuilder stringBuilder = new StringBuilder();
+    String line = null;
+    while ((line = reader.readLine()) != null) {
+        stringBuilder.append(line + "\n");
+    }
+
+    return stringBuilder.toString();
+  }
+
+  public static JsonObject getAsJsonObject(String jsonAsString) {
+      JsonParser parser = new JsonParser();
+      return parser.parse(jsonAsString).getAsJsonObject();
+  }
+
+  public static String getValueByKey(JsonObject parsedJsonObject, String key) {
+      return parsedJsonObject.get(key).toString().replaceAll("\"", "");
+  }
+
+  public static InputStream getAvatarInputStream(String avatarURL) throws IOException {
+    return new URL(avatarURL).openStream();
+  }
+
 }
