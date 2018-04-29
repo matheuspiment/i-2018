@@ -1,12 +1,12 @@
 ### JSON (exercícios)
 
-1 - true, false, numbers.  
+1 - true, false, null, numbers.  
 
 2 - application/json.  
 
-3 - O valor nil não é um valor literal admitido pelo JSON.
+3 - O valor nil não é um valor literal admitido pelo JSON e não está entre aspas.
 
-4 - { "startCadence": 10, "startSpeed": 15, "startGear": 20 } 
+4 - { "cadence": 10, "speed": 15, "gear": 20 } 
  
 5   
   a. { "cidades": ["Goiânia", "Trindade"] }  
