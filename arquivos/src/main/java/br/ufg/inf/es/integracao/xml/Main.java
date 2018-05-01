@@ -7,28 +7,32 @@ import javax.xml.bind.Unmarshaller;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by aluno on 30/04/18.
  */
 public class Main {
     public static void main(String[] args) throws JAXBException, FileNotFoundException {
-//        Aluno a1 = new Aluno("João", "joao@gmail.com");
-//        ArrayList<Aluno> alunos = new ArrayList<Aluno>();
-//        alunos.add(a1);
-//        Turma turma = new Turma();
-//        turma.setAlunos(alunos);
-//
-//        JAXBContext context = JAXBContext.newInstance(Turma.class);
-//        Marshaller m = context.createMarshaller();
-//        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-//
-//        m.marshal(turma, System.out);
+        Aluno a1 = new Aluno();
+        a1.setNome("João");
+        a1.setEmail("joao@gmail.com");
+        List<Aluno> alunos = new ArrayList<Aluno>();
+        alunos.add(a1);
+        alunos.add(a1);
+        Turma turma = new Turma();
+        turma.setAlunos(alunos);
 
         JAXBContext context = JAXBContext.newInstance(Turma.class);
-        Unmarshaller un = context.createUnmarshaller();
-        Turma turma = (Turma)un.unmarshal(new FileReader("turma.xml"));
+        Marshaller m = context.createMarshaller();
+        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 
-        System.out.print(turma.getAlunos().get(0).getNome());
+        m.marshal(turma, System.out);
+
+//        JAXBContext context = JAXBContext.newInstance(Turma.class);
+//        Unmarshaller un = context.createUnmarshaller();
+//        Turma turma = (Turma)un.unmarshal(new FileReader("turma.xml"));
+//
+//        System.out.print(turma.getAlunos().get(0).getNome());
     }
 }
