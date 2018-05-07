@@ -14,6 +14,6 @@
   c. { "altura": 2.3 }  
   d. { "sabor": null }  
 
-6 - ![exercicio 6](docs/img/exercicio6.png)
+6 - ![exercicio 6](./docs/exercicio6.png)
 
-7 - [Exercicio7](arquivos/src/main/java/br/ufg/inf/es/integracao/apigithub/Exercicio7.java)
+7 - [Exercicio7](./apigithub/Exercicio7.java)
