@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) 2018.
+ * Matheus Ribeiro Pimenta Nunes
+ * Creative Commons Attribution 4.0 International License.
+ */
+
+
 package br.ufg.inf.es.integracao.topico_3.xml;
 
 import javax.xml.bind.annotation.XmlRootElement;

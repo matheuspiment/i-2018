@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2018.
+ * Matheus Ribeiro Pimenta Nunes
+ * Creative Commons Attribution 4.0 International License.
+ */
+
 package br.ufg.inf.es.integracao.topico_3.xml;
 
 import javax.xml.bind.JAXBContext;
@@ -32,9 +38,6 @@ public class Exercicio1 {
                 aluno.setEmail(line[line.length - 1]);
 
                 alunos.add(aluno);
-
-//                System.out.println("País [code= " + pais[pais.length-2]
-//                        + " , name=" + pais[pais.length-1] + "]");
 
             }
 

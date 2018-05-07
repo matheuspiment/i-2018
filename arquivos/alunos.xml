@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <turma>
-    <aluno>
-        <email>js@srv.com</email>
-        <nome>João Silva</nome>
-    </aluno>
-    <aluno>
-        <email>matheus@srv.com</email>
-        <nome>Matheus Pimenta</nome>
-    </aluno>
+    <alunos>
+        <aluno>
+            <email>js@srv.com</email>
+            <nome>João Silva</nome>
+        </aluno>
+        <aluno>
+            <email>matheus@srv.com</email>
+            <nome>Matheus Pimenta</nome>
+        </aluno>
+    </alunos>
 </turma>
