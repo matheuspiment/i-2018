@@ -7,7 +7,10 @@
 package br.ufg.inf.es.integracao.topico_3.xml;
 
 /**
- * Created by aluno on 07/05/18.
+ * Tenis.java
+ * Purpose: Abstrair o objeto tenis.
+ *
+ * @author Matheus Ribeiro Pimenta Nunes
  */
 public class Tenis extends Calcado {
     private String esporte;

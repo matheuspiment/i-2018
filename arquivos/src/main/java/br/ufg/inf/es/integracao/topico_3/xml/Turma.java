@@ -10,9 +10,11 @@ import javax.xml.bind.annotation.*;
 import java.util.List;
 
 /**
- * Created by aluno on 30/04/18.
+ * Turma.java
+ * Purpose: Representar uma turma de alunos.
+ *
+ * @author Matheus Ribeiro Pimenta Nunes
  */
-
 @XmlRootElement()
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Turma {

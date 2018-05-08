@@ -13,9 +13,15 @@ import java.io.*;
 import java.util.ArrayList;
 
 /**
- * Created by aluno on 30/04/18.
+ * Programa que lê um arquivo CSV contendo uma lista de alunos e gera o arquivo XML correspondente.
  */
 public class Exercicio1 {
+
+    /**
+     * Ponto de entrada da aplicação.
+     *
+     * @param args Ignorados.
+     */
     public static void main(String[] args) throws JAXBException {
 
         String csvFile = "alunos.csv";

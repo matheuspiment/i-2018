@@ -14,9 +14,15 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 /**
- * Created by aluno on 07/05/18.
+ * Programa que lê um arquivo XML contendo uma "lista" de calçados, onde estes podem ser tênis ou sapatos.
  */
 public class Exercicio2 {
+
+    /**
+     * Ponto de entrada da aplicação.
+     *
+     * @param args Ignorados.
+     */
     public static void main(String[] args) throws FileNotFoundException, XMLStreamException {
         FileInputStream fis = new FileInputStream("calcados.xml");
         XMLInputFactory factory = XMLInputFactory.newFactory();

@@ -7,7 +7,10 @@
 package br.ufg.inf.es.integracao.topico_3.xml;
 
 /**
- * Created by aluno on 07/05/18.
+ * Calcado.java
+ * Purpose: Abstrair o objeto calçado.
+ *
+ * @author Matheus Ribeiro Pimenta Nunes
  */
 public class Calcado {
     private String marca;

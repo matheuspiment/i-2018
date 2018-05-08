@@ -8,7 +8,10 @@
 package br.ufg.inf.es.integracao.topico_3.xml;
 
 /**
- * Created by aluno on 07/05/18.
+ * Sapato.java
+ * Purpose: Abstrair o objeto sapato.
+ *
+ * @author Matheus Ribeiro Pimenta Nunes
  */
 public class Sapato extends Calcado {
     private int[] cor = new int[] { 0, 0, 0};
