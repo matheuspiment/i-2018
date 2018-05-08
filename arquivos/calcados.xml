@@ -1,17 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <calcados>
-    <tenis>
-        <marca>nike</marca>
-        <preco>120.00</preco>
-        <esporte>corrida</esporte>
-    </tenis>
-    <sapato>
-        <marca>nike</marca>
-        <preco>120.00</preco>
-        <cor>[0, 0, 0]</cor>
-    </sapato>
-    <tenis>
-        <marca>nike</marca>
-        <preco>170.00</preco>
-        <esporte>corrida</esporte>
-    </tenis>
+    <calcado>
+        <marca>Nike</marca>
+        <preco>142.0</preco>
+    </calcado>
+    <calcado>
+        <marca>Nike</marca>
+        <preco>142.0</preco>
+    </calcado>
 </calcados>
