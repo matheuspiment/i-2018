@@ -8,7 +8,7 @@
     <artifactId>json</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>Manipulação de Arquivos em Java</name>
+    <name>Manipulação de Arquivos JSON em Java</name>
 
     <url>https://github.com/matheuspiment/i-2018</url>
 
@@ -18,7 +18,7 @@
         <license>
             <name>Creative Commons Attribution 4.0 International (CC BY 4.0)</name>
             <comments>A atribuição deve conter, explicitamente, a seguinte linha:
-                Copyright (c) 2017. Matheus Ribeiro Pimenta Nunes
+                Copyright (c) 2018. Matheus Ribeiro Pimenta Nunes
             </comments>
             <url>https://creativecommons.org/licenses/by/4.0/</url>
         </license>
@@ -69,12 +69,6 @@
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.8.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.fasterxml.jackson.dataformat</groupId>
-            <artifactId>jackson-dataformat-xml</artifactId>
-            <version>2.9.0</version>
         </dependency>
     </dependencies>
 
