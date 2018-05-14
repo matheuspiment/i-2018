@@ -41,7 +41,7 @@
         <developerConnection>scm:git:git@github.com:matheuspiment/i-2018.git</developerConnection>
         <url>https://github.com/matheuspiment/i-2018</url>
     </scm>
-    
+
     <modules>
 	    <module>topico-1</module>
         <module>topico-2</module>
