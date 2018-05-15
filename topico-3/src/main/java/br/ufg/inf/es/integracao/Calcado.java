@@ -6,6 +6,8 @@
 
 package br.ufg.inf.es.integracao;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -14,7 +16,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  *
  * @author Matheus Ribeiro Pimenta Nunes
  */
-@XmlRootElement(name = "calcado")
+@JacksonXmlRootElement(localName = "calcado")
 public class Calcado {
     private String marca;
     private float preco;

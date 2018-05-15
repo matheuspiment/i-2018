@@ -31,12 +31,12 @@ public class Exercicio2 {
      */
     public static void main(String[] args) throws IOException, XMLStreamException, JAXBException {
 
-        File file = new File("calcados.xml");
+        File file = new File("simple_bean.xml");
         XmlMapper xmlMapper = new XmlMapper();
         String xml = inputStreamToString(new FileInputStream(file));
         Calcados value = xmlMapper.readValue(xml, Calcados.class);
-        System.out.println(value.getCalcados().get(0).getMarca());
-
+        System.out.println(value.getCalcado().get(1).getMarca());
+//
 //        Calcado a1 = new Calcado();
 //        a1.setMarca("Nike");
 //        a1.setPreco(142);
@@ -44,8 +44,12 @@ public class Exercicio2 {
 //        calcados.add(a1);
 //        calcados.add(a1);
 //        Calcados c = new Calcados();
-//        c.setCalcados(calcados);
+//        c.setCalcado(calcados);
 //
+//        XmlMapper xmlMapper = new XmlMapper();
+//        xmlMapper.writeValue(new File("simple_bean.xml"), c);
+//        File file = new File("simple_bean.xml");
+
 //        JAXBContext context = JAXBContext.newInstance(Calcados.class);
 //        Marshaller m = context.createMarshaller();
 //        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
@@ -62,5 +66,11 @@ public class Exercicio2 {
         }
         br.close();
         return sb.toString();
+    }
+
+    public void whenJavaSerializedToXmlFile_thenCorrect() throws IOException {
+        XmlMapper xmlMapper = new XmlMapper();
+        xmlMapper.writeValue(new File("simple_bean.xml"), new Calcados());
+        File file = new File("simple_bean.xml");
     }
 }

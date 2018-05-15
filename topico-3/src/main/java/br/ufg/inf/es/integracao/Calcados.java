@@ -10,6 +10,9 @@ package br.ufg.inf.es.integracao;
  * Created by aluno on 07/05/18.
  */
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+
 import javax.xml.bind.annotation.*;
 import java.util.List;
 
@@ -19,17 +22,17 @@ import java.util.List;
  *
  * @author Matheus Ribeiro Pimenta Nunes
  */
-@XmlRootElement()
+@JacksonXmlRootElement(localName = "calcados")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Calcados {
-    @XmlElement(name = "calcado")
-    private List<Calcado> calcados;
+    @JacksonXmlElementWrapper(useWrapping = false)
+    private List<Calcado> calcado;
 
-    public List<Calcado> getCalcados() {
-        return calcados;
+    public List<Calcado> getCalcado() {
+        return calcado;
     }
 
-    public void setCalcados(List<Calcado> calcados) {
-        this.calcados = calcados;
+    public void setCalcado(List<Calcado> calcado) {
+        this.calcado = calcado;
     }
 }

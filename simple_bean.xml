@@ -1,0 +1,10 @@
+<calcados>
+    <calcado>
+        <marca>Nike</marca>
+        <preco>142.0</preco>
+    </calcado>
+    <calcado>
+        <marca>Adidas</marca>
+        <preco>150.0</preco>
+    </calcado>
+</calcados>
