@@ -4,13 +4,11 @@
  * Creative Commons Attribution 4.0 International License.
  */
 
-package br.ufg.inf.es.integracao;
+package br.ufg.inf.es.integracao.exercicio_02;
 
 /**
  * Tenis.java
  * Purpose: Abstrair o objeto tenis.
- *
- * @author Matheus Ribeiro Pimenta Nunes
  */
 public class Tenis extends Calcado {
     private String esporte;

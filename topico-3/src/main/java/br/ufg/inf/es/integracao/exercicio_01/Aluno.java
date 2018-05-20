@@ -4,15 +4,13 @@
  * Creative Commons Attribution 4.0 International License.
  */
 
-package br.ufg.inf.es.integracao;
+package br.ufg.inf.es.integracao.exercicio_01;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Aluno.java
  * Purpose: Abstrair a entidade aluno.
- *
- * @author Matheus Ribeiro Pimenta Nunes
  */
 @XmlRootElement(name = "aluno")
 public class Aluno {

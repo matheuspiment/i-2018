@@ -4,11 +4,7 @@
  * Creative Commons Attribution 4.0 International License.
  */
 
-package br.ufg.inf.es.integracao;
-
-/**
- * Created by aluno on 07/05/18.
- */
+package br.ufg.inf.es.integracao.exercicio_02;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
@@ -19,20 +15,27 @@ import java.util.List;
 /**
  * Turma.java
  * Purpose: Representar uma turma de alunos.
- *
- * @author Matheus Ribeiro Pimenta Nunes
  */
 @JacksonXmlRootElement(localName = "calcados")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Calcados {
     @JacksonXmlElementWrapper(useWrapping = false)
-    private List<Calcado> calcado;
+    private List<Sapato> sapatos;
+    private List<Tenis> tenis;
 
-    public List<Calcado> getCalcado() {
-        return calcado;
+    public List<Sapato> getSapatos() {
+        return sapatos;
     }
 
-    public void setCalcado(List<Calcado> calcado) {
-        this.calcado = calcado;
+    public void setSapatos(List<Sapato> sapatos) {
+        this.sapatos = sapatos;
+    }
+
+    public List<Tenis> getTenis() {
+        return tenis;
+    }
+
+    public void setTenis(List<Tenis> tenis) {
+        this.tenis = tenis;
     }
 }

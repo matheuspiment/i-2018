@@ -4,7 +4,7 @@
  * Creative Commons Attribution 4.0 International License.
  */
 
-package br.ufg.inf.es.integracao;
+package br.ufg.inf.es.integracao.exercicio_01;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;

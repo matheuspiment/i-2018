@@ -1,0 +1,15 @@
+<turma>
+    <disciplina/>
+    <estudantes>
+        <estudante>
+            <matricula>0</matricula>
+            <nome>WW</nome>
+            <endereco/>
+        </estudante>
+        <estudante>
+            <matricula>0</matricula>
+            <nome>EE</nome>
+            <endereco/>
+        </estudante>
+    </estudantes>
+</turma>

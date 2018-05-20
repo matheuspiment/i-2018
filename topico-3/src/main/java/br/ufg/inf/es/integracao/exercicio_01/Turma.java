@@ -4,7 +4,7 @@
  * Creative Commons Attribution 4.0 International License.
  */
 
-package br.ufg.inf.es.integracao;
+package br.ufg.inf.es.integracao.exercicio_01;
 
 import javax.xml.bind.annotation.*;
 import java.util.List;
@@ -12,8 +12,6 @@ import java.util.List;
 /**
  * Turma.java
  * Purpose: Representar uma turma de alunos.
- *
- * @author Matheus Ribeiro Pimenta Nunes
  */
 @XmlRootElement()
 @XmlAccessorType(XmlAccessType.FIELD)

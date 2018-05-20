@@ -4,7 +4,10 @@
  * Creative Commons Attribution 4.0 International License.
  */
 
-package br.ufg.inf.es.integracao;
+package br.ufg.inf.es.integracao.exercicio_01;
+
+import br.ufg.inf.es.integracao.exercicio_01.Aluno;
+import br.ufg.inf.es.integracao.exercicio_01.Turma;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;

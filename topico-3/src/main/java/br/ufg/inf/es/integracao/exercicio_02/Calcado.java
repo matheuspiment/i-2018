@@ -4,7 +4,7 @@
  * Creative Commons Attribution 4.0 International License.
  */
 
-package br.ufg.inf.es.integracao;
+package br.ufg.inf.es.integracao.exercicio_02;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
@@ -13,8 +13,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 /**
  * Calcado.java
  * Purpose: Abstrair o objeto calçado.
- *
- * @author Matheus Ribeiro Pimenta Nunes
  */
 @JacksonXmlRootElement(localName = "calcado")
 public class Calcado {
