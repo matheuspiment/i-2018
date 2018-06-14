@@ -14,11 +14,11 @@ import java.util.List;
 
 /**
  * Turma.java
- * Purpose: Representar uma turma de alunos.
+ * Purpose: Representar uma lista de calçados.
  */
 @JacksonXmlRootElement(localName = "calcados")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Calcados {
+public class Estoque {
     @JacksonXmlElementWrapper(useWrapping = false)
     private List<Sapato> sapatos;
     private List<Tenis> tenis;

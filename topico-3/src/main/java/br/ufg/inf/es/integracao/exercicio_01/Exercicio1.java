@@ -11,6 +11,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Programa que lê um arquivo CSV contendo uma lista de alunos e gera o arquivo XML correspondente.
@@ -20,32 +21,20 @@ public class Exercicio1 {
     /**
      * Ponto de entrada da aplicação.
      *
-     * @param args Ignorados.
+     * @param args Filepath do arquivo CSV a ser utilizado.
      */
     public static void main(String[] args) throws JAXBException {
 
-        String csvFile = "alunos.csv";
+        String csvFile = args[0];
         BufferedReader br = null;
-        String linha = "";
         String csvDivisor = ";";
 
         Turma turma = new Turma();
-        ArrayList<Aluno> alunos = new ArrayList<Aluno>();
 
         try {
 
             br = new BufferedReader(new FileReader(csvFile));
-            while ((linha = br.readLine()) != null) {
-
-                String[] line = linha.split(csvDivisor);
-
-                Aluno aluno = new Aluno();
-                aluno.setNome(line[line.length - 2]);
-                aluno.setEmail(line[line.length - 1]);
-
-                alunos.add(aluno);
-
-            }
+            ArrayList<Aluno> alunos = (ArrayList<Aluno>) getAlunos(br, csvDivisor);
 
             turma.setAlunos(alunos);
 
@@ -67,6 +56,29 @@ public class Exercicio1 {
                 }
             }
         }
+    }
+
+    /**
+     * Retorna uma lista com os alunos de um BufferedReader (CSV).
+     *
+     * @param bufferedReader Uma instânica BufferedReader.
+     * @param csvDivisor Caractere utilizado como divisor.
+     * @return List contendo os alunos do BufferedReader.
+     */
+    public static List<Aluno> getAlunos(BufferedReader bufferedReader, String csvDivisor) throws IOException {
+        List<Aluno> alunos = new ArrayList<>();
+        String linha;
+        while ((linha = bufferedReader.readLine()) != null) {
+            String[] line = linha.split(csvDivisor);
+
+            Aluno aluno = new Aluno();
+            aluno.setNome(line[line.length - 2]);
+            aluno.setEmail(line[line.length - 1]);
+
+            alunos.add(aluno);
+        }
+
+        return alunos;
     }
 
 }

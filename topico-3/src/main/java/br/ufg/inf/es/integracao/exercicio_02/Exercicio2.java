@@ -29,7 +29,7 @@ public class Exercicio2 {
 
         XMLStreamReader arquivo = getXMLFIle(args[0]);
         XmlMapper xmlMapper = new XmlMapper();
-        Calcados calcados = deserializeCalcados(arquivo, xmlMapper);
+        Estoque estoque = deserializeCalcados(arquivo, xmlMapper);
 
     }
 
@@ -41,8 +41,8 @@ public class Exercicio2 {
         return reader;
     }
 
-    private static  Calcados deserializeCalcados(XMLStreamReader reader, XmlMapper xmlMapper) throws XMLStreamException, IOException {
-        Calcados calcados = new Calcados();
+    private static Estoque deserializeCalcados(XMLStreamReader reader, XmlMapper xmlMapper) throws XMLStreamException, IOException {
+        Estoque estoque = new Estoque();
         ArrayList<Tenis> tenisArray = new ArrayList<Tenis>();
         ArrayList<Sapato> sapatosArray = new ArrayList<Sapato>();
 
@@ -62,9 +62,9 @@ public class Exercicio2 {
             evento = reader.next();
         }
 
-        calcados.setSapatos(sapatosArray);
-        calcados.setTenis(tenisArray);
+        estoque.setSapatos(sapatosArray);
+        estoque.setTenis(tenisArray);
 
-        return calcados;
+        return estoque;
     }
 }
