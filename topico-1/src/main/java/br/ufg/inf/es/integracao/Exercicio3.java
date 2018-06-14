@@ -6,10 +6,8 @@
 
 package br.ufg.inf.es.integracao;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.util.*;
 
 /**
  * Programa que exibe o conteúdo de arquivo texto, formato UTF-8, na saída padrão.
@@ -23,12 +21,11 @@ public class Exercicio3 {
      */
     public static void main(String[] args) {
         try {
-            FileInputStream file = new FileInputStream(args[0]);
-            InputStreamReader inputReader = new InputStreamReader(file, "UTF-8");
-            BufferedReader bufferReader = new BufferedReader(inputReader);
+            BufferedReader bufferReader = bufferedReaderFromFilepath(args[0]);
 
-            String linha;
-            while ((linha = bufferReader.readLine()) != null) {
+            ArrayList<String> linhas = (ArrayList<String>) getLines(bufferReader);
+
+            for (String linha: linhas) {
                 System.out.println(linha);
             }
 
@@ -39,6 +36,35 @@ public class Exercicio3 {
                     e.getMessage());
         }
 
+    }
+
+    /**
+     * Retorna uma instânica BufferedReader a partir de um filepath.
+     *
+     * @param filepath Path de um arquivo.
+     * @return Instânica BufferedReader a partir de um filepath.
+     */
+    public static BufferedReader bufferedReaderFromFilepath(String filepath) throws FileNotFoundException,
+            UnsupportedEncodingException {
+        FileInputStream file = new FileInputStream(filepath);
+        InputStreamReader inputReader = new InputStreamReader(file, "UTF-8");
+        return new BufferedReader(inputReader);
+    }
+
+    /**
+     * Retorna uma lista com o conteúdo das linhas de um BufferedReader.
+     *
+     * @param bufferedReader Uma instânica BufferedReader.
+     * @return List contendo as linhas do BufferedReader.
+     */
+    public static List<String> getLines(BufferedReader bufferedReader) throws IOException {
+        List<String> linhas = new ArrayList<String>();
+        String linha;
+        while ((linha = bufferedReader.readLine()) != null) {
+            linhas.add(linha);
+        }
+
+        return linhas;
     }
 
 }
